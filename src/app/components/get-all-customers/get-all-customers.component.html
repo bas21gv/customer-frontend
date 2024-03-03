@@ -1,0 +1,23 @@
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let customer of customers">
+            <td>{{ customer.id }}</td>
+            <td>{{ customer.name }}</td>
+            <td>{{ customer.email }}</td>
+            <td>{{ customer.phone }}</td>
+            <td>
+                <button class="btn btn-primary" routerLink="/update-customer/{{customer.id}}">Update</button>
+                <button class="btn btn-danger" (click)="customer.id !== undefined && deleteCustomer(customer.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
